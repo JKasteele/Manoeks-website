@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Tree of Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="#home">
+          <span class="brand__logo" aria-hidden="true">🌿</span>
+          <span class="brand__text">Studio Tree of Life</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Menu</span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+        <nav class="primary-nav" id="primary-navigation">
+          <ul>
+            <li><a href="#aanbod">Aanbod</a></li>
+            <li><a href="#over">Over</a></li>
+            <li><a href="#praktisch">Praktisch</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero__content">
+          <p class="hero__kicker">Holistische therapie & coaching</p>
+          <h1 class="hero__title">Ontdek de kracht van natuur en verbinding</h1>
+          <p class="hero__description">
+            Studio Tree of Life begeleidt je naar meer balans en vertrouwen.
+            Met aandacht voor lichaam, geest en ziel creëren we samen ruimte voor herstel.
+          </p>
+          <a class="button" href="#contact">Plan een kennismaking</a>
+        </div>
+      </section>
+
+      <section class="section" id="aanbod">
+        <div class="container">
+          <h2>Aanbod</h2>
+          <div class="grid">
+            <article class="card">
+              <h3>Holistische therapie</h3>
+              <p>
+                Persoonlijke sessies waarin we blokkades verzachten en
+                verbinding maken met jouw intuïtie. Een veilige plek om jezelf te zijn.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Healing & energie werk</h3>
+              <p>
+                Zachte energetische behandelingen die je systeem in balans brengen.
+                Ervaar rust, heling en hernieuwde levensenergie.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Ceremonies & retreats</h3>
+              <p>
+                Verdiepende bijeenkomsten waarin we de magie van rituelen, ademwerk en
+                klank inzetten om jouw proces te ondersteunen.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--accent" id="over">
+        <div class="container container--split">
+          <div>
+            <h2>Over Studio Tree of Life</h2>
+            <p>
+              Studio Tree of Life is opgericht door Manoek, therapeut en spaceholder.
+              Vanuit liefde voor de natuur, sjamanisme en lichaamsgericht werk begeleidt zij mensen
+              in het herinneren van hun eigen wijsheid.
+            </p>
+            <p>
+              Met warme, aardse energie creëert Manoek een bedding waarin je volledig mag landen.
+              Iedere sessie is afgestemd op jou en het ritme van de natuur.
+            </p>
+          </div>
+          <div class="feature-box">
+            <h3>Kernwaarden</h3>
+            <ul>
+              <li>Verbinding met de natuur</li>
+              <li>Lichaamsbewustzijn</li>
+              <li>Openheid en compassie</li>
+              <li>Veilige en zachte begeleiding</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="praktisch">
+        <div class="container container--split">
+          <div>
+            <h2>Praktische info</h2>
+            <p>
+              Sessies vinden plaats in de sfeervolle studio in Leiden of online. In overleg is het ook mogelijk om een sessie in de natuur te doen.
+            </p>
+            <p>
+              Neem gerust contact op voor meer informatie over tarieven, vergoedingen en beschikbaarheid.
+            </p>
+          </div>
+          <aside class="info-panel">
+            <h3>Sessies</h3>
+            <dl>
+              <div>
+                <dt>Locatie</dt>
+                <dd>Leiden & online</dd>
+              </div>
+              <div>
+                <dt>Duur</dt>
+                <dd>60 of 90 minuten</dd>
+              </div>
+              <div>
+                <dt>Investering</dt>
+                <dd>Vanaf € 95,- per sessie</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--dark" id="contact">
+        <div class="container container--split">
+          <div>
+            <h2>Neem contact op</h2>
+            <p>
+              Vul het formulier in en ik neem zo snel mogelijk contact met je op om kennis te maken.
+            </p>
+            <ul class="contact-list">
+              <li><a href="tel:+31600000000">+31 6 00 00 00 00</a></li>
+              <li><a href="mailto:hallo@studiotreeoflife.nl">hallo@studiotreeoflife.nl</a></li>
+              <li>Leiden, Nederland</li>
+            </ul>
+          </div>
+          <form class="contact-form">
+            <label>
+              Naam
+              <input type="text" name="name" placeholder="Je naam" required />
+            </label>
+            <label>
+              E-mail
+              <input type="email" name="email" placeholder="je@email.nl" required />
+            </label>
+            <label>
+              Bericht
+              <textarea name="message" rows="4" placeholder="Vertel me meer..." required></textarea>
+            </label>
+            <button type="submit" class="button button--light">Verstuur</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="current-year"></span> Studio Tree of Life. Alle rechten voorbehouden.</p>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".primary-nav");
+      navToggle.addEventListener("click", () => {
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+        nav.classList.toggle("primary-nav--open");
+      });
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

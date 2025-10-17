@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Over Manoek | Studio Tree of Life</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html#home">
+          <span class="brand__logo" aria-hidden="true">🌿</span>
+          <span class="brand__text">Studio Tree of Life</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+          <span class="sr-only">Menu</span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+        <nav class="primary-nav" id="primary-navigation">
+          <ul>
+            <li><a href="index.html#aanbod">Aanbod</a></li>
+            <li><a href="index.html#inspiratie">Inspiratie</a></li>
+            <li><a href="over.html" aria-current="page">Over</a></li>
+            <li><a href="index.html#praktisch">Praktisch</a></li>
+            <li><a href="agenda.html">Yoga agenda</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero page-hero--about">
+        <div class="container page-hero__content">
+          <p class="page-hero__kicker">Over Manoek</p>
+          <h1>Een zachte plek om thuis te komen</h1>
+          <p>
+            Studio Tree of Life is ontstaan uit het verlangen om een veilige bedding te bieden
+            voor rust, herstel en hernieuwde levensenergie.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container container--narrow prose">
+          <h2>Wat fijn dat je er bent!</h2>
+          <p>
+            Mijn naam is Manoek, en ik heb Studio Tree Of Life opgericht vanuit een diep verlangen
+            om een plek te creëren waar je mag vertragen, tot rust komen en je energie weer kunt
+            opladen.
+          </p>
+          <p>
+            Ik begeleid vrouwen – en mensen die zich willen verbinden met zachte energie – die
+            worstelen met stress, burn-out, angst of andere vormen van mentale en fysieke
+            uitputting. Mijn pad naar dit werk begon niet uit een leerboek, maar uit mijn eigen
+            zoektocht naar rust.
+          </p>
+          <p>
+            Ik weet hoe het voelt om opgebrand te zijn, om elke dag te leven met angst, spanning en
+            een gevoel van leegte. Burn-out, depressie en overprikkeling zijn geen abstracte
+            begrippen voor mij – ik heb ze van binnenuit leren kennen. Ik heb geleerd: heling begint
+            niet met harder je best doen, maar met zachter worden voor jezelf.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section--soft">
+        <div class="container container--narrow prose">
+          <h2>Wat mij op mijn eigen pad heeft geholpen</h2>
+          <p>Deze elementen vormen nu de basis van mijn werk:</p>
+          <ul class="feature-list">
+            <li>werken met het lichaam via yoga;</li>
+            <li>de adem als anker;</li>
+            <li>de kracht van gedragen worden in vrouwencirkels;</li>
+            <li>en de diepe heling van energetisch werk.</li>
+          </ul>
+          <p>
+            De manier waarop ik werk is intuïtief en traumasensitief. Ik geloof in de wijsheid van
+            het lichaam en het zelfherstellend vermogen dat in ieder mens leeft. Mijn visie is dat
+            heling niet iets is wat geforceerd moet of kan worden – maar iets wat zich ontvouwt
+            wanneer je voldoende veiligheid, zachtheid en bedding ervaart.
+          </p>
+          <p>Mijn hoop is dat Studio Tree Of Life die plek voor jou mag zijn.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container container--split">
+          <div class="prose">
+            <h2>Opleidingen & achtergrond</h2>
+            <p>
+              Mijn achtergrond bestaat uit diverse opleidingen en verdiepingen die steeds weer
+              aansluiten bij wat ik zelf heb mogen ervaren.
+            </p>
+            <ul class="feature-list">
+              <li>Yogaopleidingen in Hatha, Yin en Yoga Nidra</li>
+              <li>Reiki graden 1, 2 en 3</li>
+              <li>Opleiding tot vrouwencirkel-facilitator (Usha Anandi)</li>
+              <li>Trauma Bewuste Yogaopleiding</li>
+              <li>Verdieping in yogatherapie voor vrouwen (in opleiding)</li>
+            </ul>
+          </div>
+          <aside class="about-panel">
+            <h3>Mijn uitnodiging aan jou</h3>
+            <p>
+              Studio Tree Of Life is een plek waar je welkom bent met alles wat je meebrengt. Hier
+              is ruimte voor rust, zelfzorg en verbinding met jouw innerlijke kracht – op jouw eigen
+              tempo, zodat het goed voor jou voelt.
+            </p>
+            <p class="signature">Je bent van harte welkom.<br /><strong>Warme groet, Manoek</strong></p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="current-year"></span> Studio Tree of Life. Alle rechten voorbehouden.</p>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".primary-nav");
+      navToggle.addEventListener("click", () => {
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+        nav.classList.toggle("primary-nav--open");
+      });
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

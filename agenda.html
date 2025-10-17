@@ -31,7 +31,8 @@
             <li><a href="index.html#inspiratie">Inspiratie</a></li>
             <li><a href="over.html">Over</a></li>
             <li><a href="index.html#praktisch">Praktisch</a></li>
-            <li><a href="agenda.html">Yoga agenda</a></li>
+            <li><a href="agenda.html" aria-current="page">Yoga agenda</a></li>
+            <li><a href="faq.html">FAQ</a></li>
             <li><a href="index.html#contact">Contact</a></li>
           </ul>
         </nav>
@@ -217,12 +218,90 @@
     <script>
       const navToggle = document.querySelector(".nav-toggle");
       const nav = document.querySelector(".primary-nav");
-      navToggle.addEventListener("click", () => {
-        const expanded = navToggle.getAttribute("aria-expanded") === "true";
-        navToggle.setAttribute("aria-expanded", String(!expanded));
-        nav.classList.toggle("primary-nav--open");
-      });
-      document.getElementById("current-year").textContent = new Date().getFullYear();
+      if (navToggle && nav) {
+        navToggle.addEventListener("click", () => {
+          const expanded = navToggle.getAttribute("aria-expanded") === "true";
+          navToggle.setAttribute("aria-expanded", String(!expanded));
+          nav.classList.toggle("primary-nav--open");
+        });
+      }
+
+      const yearElement = document.getElementById("current-year");
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+
+      const faqTriggers = document.querySelectorAll(".faq-item__trigger");
+      if (faqTriggers.length) {
+        const closeItem = (trigger) => {
+          if (trigger.getAttribute("aria-expanded") === "false") return;
+          const content = trigger.nextElementSibling;
+          trigger.setAttribute("aria-expanded", "false");
+          trigger.classList.remove("is-open");
+          if (!content) return;
+          const onTransitionEnd = (event) => {
+            if (event.propertyName === "max-height") {
+              content.hidden = true;
+              content.classList.remove("is-open");
+              content.style.maxHeight = "";
+              content.style.opacity = "";
+              content.removeEventListener("transitionend", onTransitionEnd);
+            }
+          };
+          content.addEventListener("transitionend", onTransitionEnd);
+          const startHeight = content.scrollHeight;
+          content.style.maxHeight = startHeight + "px";
+          content.style.opacity = "1";
+          requestAnimationFrame(() => {
+            content.style.maxHeight = "0px";
+            content.style.opacity = "0";
+          });
+        };
+
+        const openItem = (trigger) => {
+          if (trigger.getAttribute("aria-expanded") === "true") return;
+          const content = trigger.nextElementSibling;
+          trigger.setAttribute("aria-expanded", "true");
+          trigger.classList.add("is-open");
+          if (!content) return;
+          content.hidden = false;
+          content.classList.add("is-open");
+          content.style.maxHeight = "none";
+          const height = content.scrollHeight;
+          content.style.maxHeight = "0px";
+          content.style.opacity = "0";
+          requestAnimationFrame(() => {
+            content.style.maxHeight = height + "px";
+            content.style.opacity = "1";
+          });
+          const onTransitionEnd = (event) => {
+            if (event.propertyName === "max-height") {
+              content.style.maxHeight = "none";
+              content.style.opacity = "";
+              content.removeEventListener("transitionend", onTransitionEnd);
+            }
+          };
+          content.addEventListener("transitionend", onTransitionEnd);
+        };
+
+        faqTriggers.forEach((trigger) => {
+          trigger.addEventListener("click", () => {
+            const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+            faqTriggers.forEach((otherTrigger) => {
+              if (otherTrigger !== trigger) {
+                closeItem(otherTrigger);
+              }
+            });
+            if (!isExpanded) {
+              openItem(trigger);
+            } else {
+              closeItem(trigger);
+            }
+          });
+        });
+
+        openItem(faqTriggers[0]);
+      }
     </script>
   </body>
 </html>

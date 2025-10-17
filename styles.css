@@ -144,6 +144,10 @@ img {
   background-image: url("images/over-manoek.jpg");
 }
 
+.page-hero--faq {
+  background-image: url("https://images.unsplash.com/photo-1518834107812-67b0b7c58434?auto=format&fit=crop&w=1800&q=80");
+}
+
 .hero::after {
   content: "";
   position: absolute;
@@ -386,6 +390,199 @@ img {
 
 .section--accent {
   background-color: #ede3d8;
+}
+
+.faq-overview {
+  display: grid;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.faq-overview__intro h2 {
+  margin-bottom: 1rem;
+}
+
+.faq-overview__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.faq-category-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 1.8rem;
+  border-radius: 20px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.88), rgba(237, 227, 216, 0.9));
+  box-shadow: 0 18px 40px rgba(61, 90, 61, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.faq-category-card:hover,
+.faq-category-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 55px rgba(61, 90, 61, 0.18);
+  text-decoration: none;
+}
+
+.faq-category-card__icon {
+  font-size: 2rem;
+}
+
+.faq-section {
+  background: linear-gradient(180deg, rgba(237, 227, 216, 0.35), rgba(246, 242, 237, 0.9));
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.faq-group {
+  display: grid;
+  gap: 3rem;
+}
+
+.faq-group__header {
+  max-width: 520px;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.faq-group__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(58, 56, 53, 0.7);
+  margin: 0;
+}
+
+.faq-group h2 {
+  margin: 0;
+}
+
+.faq-accordion {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.faq-item {
+  background-color: var(--color-light);
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(61, 90, 61, 0.12);
+  overflow: hidden;
+}
+
+.faq-item__trigger {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.6rem 2rem;
+  background: none;
+  border: none;
+  text-align: left;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-item__trigger:hover,
+.faq-item__trigger:focus {
+  background-color: rgba(212, 181, 158, 0.12);
+  outline: none;
+}
+
+.faq-item__trigger:focus-visible {
+  box-shadow: 0 0 0 3px rgba(212, 181, 158, 0.45);
+  border-radius: 22px;
+}
+
+.faq-item__number {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: rgba(61, 90, 61, 0.65);
+}
+
+.faq-item__question {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.faq-item__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(61, 90, 61, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.faq-item__icon::before,
+.faq-item__icon::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: transform 0.3s ease;
+}
+
+.faq-item__icon::after {
+  transform: rotate(90deg);
+}
+
+.faq-item__trigger.is-open .faq-item__icon {
+  background-color: var(--color-primary);
+  border-color: transparent;
+}
+
+.faq-item__trigger.is-open .faq-item__icon::before,
+.faq-item__trigger.is-open .faq-item__icon::after {
+  background-color: var(--color-light);
+}
+
+.faq-item__trigger.is-open .faq-item__icon::after {
+  transform: rotate(0deg);
+}
+
+.faq-item__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.45s ease, opacity 0.35s ease;
+}
+
+.faq-item__content.is-open {
+  opacity: 1;
+}
+
+.faq-item__content-inner {
+  padding: 0 2rem 1.8rem 2rem;
+  display: grid;
+  gap: 1rem;
+  color: rgba(58, 56, 53, 0.85);
+}
+
+.faq-item__content-inner ul,
+.faq-item__content-inner ol {
+  margin: 0;
+  padding-left: 1.5rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.faq-item__content-inner a {
+  color: var(--color-primary);
+  font-weight: 600;
 }
 
 .section--dark {
@@ -694,6 +891,10 @@ textarea {
     pointer-events: auto;
     transform: scale(1);
   }
+
+  .faq-overview__grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
 
 @media (max-width: 600px) {
@@ -708,5 +909,13 @@ textarea {
 
   .button {
     width: 100%;
+  }
+
+  .faq-item__trigger {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .faq-item__content-inner {
+    padding: 0 1.5rem 1.5rem;
   }
 }

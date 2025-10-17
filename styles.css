@@ -563,7 +563,7 @@ textarea {
   border: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .nav-toggle {
     display: block;
   }

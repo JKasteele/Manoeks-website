@@ -108,6 +108,42 @@ img {
   text-align: left;
 }
 
+.page-hero {
+  position: relative;
+  padding: 7rem 0 5rem;
+  color: var(--color-light);
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(61, 90, 61, 0.82), rgba(212, 181, 158, 0.68));
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  text-align: center;
+}
+
+.page-hero__kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: 600;
+  font-size: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-hero--about {
+  background-image: url("images/over-manoek.jpg");
+}
+
 .hero::after {
   content: "";
   position: absolute;
@@ -143,6 +179,65 @@ img {
 
 .section {
   padding: 4.5rem 0;
+}
+
+.section--soft {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.container--narrow {
+  width: min(760px, 92vw);
+  margin: 0 auto;
+}
+
+.prose {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.prose h2 {
+  font-family: var(--font-heading);
+  margin-bottom: 0.5rem;
+}
+
+.prose p {
+  margin: 0;
+}
+
+.feature-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style: disc;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.feature-list li {
+  line-height: 1.6;
+}
+
+.about-panel {
+  background-color: var(--color-light);
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 20px 45px rgba(61, 90, 61, 0.08);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.about-panel h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.about-panel p {
+  margin: 0;
+}
+
+.signature {
+  font-style: italic;
+  line-height: 1.8;
 }
 
 .section__heading {
